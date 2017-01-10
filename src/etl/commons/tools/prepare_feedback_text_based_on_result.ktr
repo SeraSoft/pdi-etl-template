@@ -76,9 +76,9 @@
   </notepads>
   <order>
   <hop> <from>Start</from><to>Retrieve needed data</to><enabled>Y</enabled> </hop>
-  <hop> <from>Retrieve needed data</from><to>Evaluate termination flag</to><enabled>Y</enabled> </hop>
   <hop> <from>Evaluate termination flag</from><to>Success</to><enabled>Y</enabled> </hop>
   <hop> <from>Evaluate termination flag</from><to>Error</to><enabled>Y</enabled> </hop>
+  <hop> <from>Retrieve needed data</from><to>Evaluate termination flag</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Error</name>
@@ -223,7 +223,7 @@
       </field>
       <field>
         <name>mail_destination_addresses</name>
-        <variable>&#x24;&#x7b;mail.send1&#x7d;</variable>
+        <variable>&#x24;&#x7b;default.mail.destination.addresses&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -236,7 +236,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>432</xloc>
+      <xloc>352</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
       </GUI>

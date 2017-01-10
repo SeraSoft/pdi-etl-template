@@ -11,41 +11,6 @@
   <modified_user>-</modified_user>
   <modified_date>2016&#x2f;04&#x2f;05 15&#x3a;46&#x3a;56.440</modified_date>
     <parameters>
-        <parameter>
-            <name>email_body</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>email_subject</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>error_code</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>error_count</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>error_description</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>error_files</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>error_long_description</name>
-            <default_value/>
-            <description/>
-        </parameter>
     </parameters>
     <slaveservers>
     </slaveservers>
@@ -90,8 +55,8 @@
       <zip_name>error_log.zip</zip_name>
       <use_auth>Y</use_auth>
       <use_secure_auth>Y</use_secure_auth>
-      <auth_user>&#x24;&#x7b;mail.from.email&#x7d;</auth_user>
-      <auth_password>&#x24;&#x7b;mail.from.psw&#x7d;</auth_password>
+      <auth_user>&#x24;&#x7b;smtp.mail.user&#x7d;</auth_user>
+      <auth_password>&#x24;&#x7b;smtp.mail.psw&#x7d;</auth_password>
       <only_comment>Y</only_comment>
       <use_HTML>Y</use_HTML>
       <use_Priority>N</use_Priority>
@@ -194,8 +159,8 @@
       <zip_name>error_log.zip</zip_name>
       <use_auth>Y</use_auth>
       <use_secure_auth>N</use_secure_auth>
-      <auth_user>&#x24;&#x7b;mail.from.email&#x7d;</auth_user>
-      <auth_password>&#x24;&#x7b;mail.from.psw&#x7d;</auth_password>
+      <auth_user>&#x24;&#x7b;smtp.mail.user&#x7d;</auth_user>
+      <auth_password>&#x24;&#x7b;smtp.mail.psw&#x7d;</auth_password>
       <only_comment>Y</only_comment>
       <use_HTML>Y</use_HTML>
       <use_Priority>N</use_Priority>
@@ -314,8 +279,8 @@
       <note>Generic email sender job. Accepts three variables&#x3a;&#xa;&#xa;email_subject -&#x3e; Contains the subject of the email&#xa;email_body -&#x3e; Contains the body of the email in HTML format&#xa;mail.destination.addresses -&#x3e; Comma separated list of destination addresses</note>
       <xloc>48</xloc>
       <yloc>192</yloc>
-      <width>467</width>
-      <heigth>90</heigth>
+      <width>519</width>
+      <heigth>110</heigth>
       <fontname/>
       <fontsize>-1</fontsize>
       <fontbold>N</fontbold>
