@@ -82,8 +82,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>224</yloc>
+      <xloc>784</xloc>
+      <yloc>432</yloc>
       </entry>
     <entry>
       <name>START</name>
@@ -102,7 +102,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
+      <xloc>160</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -113,7 +113,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>496</xloc>
       <yloc>432</yloc>
       </entry>
     <entry>
@@ -196,20 +196,94 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
-      <yloc>288</yloc>
+      <xloc>496</xloc>
+      <yloc>336</yloc>
+      </entry>
+    <entry>
+      <name>Send customer feedback using SMTP No Auth</name>
+      <description/>
+      <type>MAIL</type>
+      <server>&#x24;&#x7b;smtp.mail.host&#x7d;</server>
+      <port>&#x24;&#x7b;smtp.mail.port&#x7d;</port>
+      <destination>&#x24;&#x7b;mail.destination.addresses&#x7d;</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>&#x24;&#x7b;mail.from.email&#x7d;</replyto>
+      <replytoname>&#x24;&#x7b;mail.from.email&#x7d;</replytoname>
+      <subject>&#x24;&#x7b;email_subject&#x7d;</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment>&#x24;&#x7b;email_body&#x7d;</comment>
+      <include_files>N</include_files>
+      <zip_files>Y</zip_files>
+      <zip_name>error_log.zip</zip_name>
+      <use_auth>N</use_auth>
+      <use_secure_auth>N</use_secure_auth>
+      <auth_user/>
+      <auth_password>&#x24;&#x7b;smtp.mail.psw&#x7d;</auth_password>
+      <only_comment>Y</only_comment>
+      <use_HTML>Y</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>        <filetype>GENERAL</filetype>
+      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>384</xloc>
+      <yloc>144</yloc>
+      </entry>
+    <entry>
+      <name>Use Auth&#x3f;</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname/>
+      <variablename>&#x24;&#x7b;mail.isauthenticated&#x7d;</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>true</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>336</xloc>
+      <yloc>64</yloc>
+      </entry>
+    <entry>
+      <name>DUMMY 2</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>336</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Send customer feedback using GMAIL</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>Use Google Mail&#x3f;</from>
       <to>Send customer feedback using GMAIL</to>
@@ -226,15 +300,6 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Send customer feedback using other SMTP server</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -266,7 +331,70 @@
     </hop>
     <hop>
       <from>START</from>
+      <to>Use Auth&#x3f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Use Auth&#x3f;</from>
       <to>Use Google Mail&#x3f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Use Auth&#x3f;</from>
+      <to>Send customer feedback using SMTP No Auth</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Send customer feedback using GMAIL</from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Send customer feedback using other SMTP server</from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Send customer feedback using SMTP No Auth</from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Send customer feedback using SMTP No Auth</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 2</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -277,8 +405,8 @@
   <notepads>
     <notepad>
       <note>Generic email sender job. Accepts three variables&#x3a;&#xa;&#xa;email_subject -&#x3e; Contains the subject of the email&#xa;email_body -&#x3e; Contains the body of the email in HTML format&#xa;mail.destination.addresses -&#x3e; Comma separated list of destination addresses</note>
-      <xloc>48</xloc>
-      <yloc>192</yloc>
+      <xloc>32</xloc>
+      <yloc>528</yloc>
       <width>519</width>
       <heigth>110</heigth>
       <fontname/>
