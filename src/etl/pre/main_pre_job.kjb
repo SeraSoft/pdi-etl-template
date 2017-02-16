@@ -12,22 +12,11 @@
   <modified_date>2011&#x2f;11&#x2f;28 16&#x3a;06&#x3a;38.743</modified_date>
     <parameters>
         <parameter>
-            <name>f65ph001.phprfl</name>
-            <default_value/>
-            <description>F65PH001 record&#x27;s status</description>
-        </parameter>
-        <parameter>
             <name>p_configfile</name>
             <default_value/>
             <description/>
         </parameter>
     </parameters>
-    <slaveservers>
-         <slaveserver><name>server-155</name><hostname>192.168.10.115</hostname><port>8080</port><webAppName/><username>cluster</username><password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master><sslMode>N</sslMode></slaveserver>
-         <slaveserver><name>localhost-master</name><hostname>192.168.10.112</hostname><port>8080</port><webAppName/><username>cluster</username><password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>Y</master><sslMode>N</sslMode></slaveserver>
-         <slaveserver><name>localhost</name><hostname>localhost</hostname><port>8080</port><webAppName/><username>cluster</username><password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>Y</master><sslMode>N</sslMode></slaveserver>
-         <slaveserver><name>server-114</name><hostname>192.168.10.114</hostname><port>8080</port><webAppName/><username>cluster</username><password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master><sslMode>N</sslMode></slaveserver>
-    </slaveservers>
 <job-log-table><connection/>
 <schema/>
 <table/>
