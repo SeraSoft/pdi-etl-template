@@ -17,6 +17,8 @@
             <description>nome file di propertire del flusso etl</description>
         </parameter>
     </parameters>
+    <slaveservers>
+    </slaveservers>
 <job-log-table><connection/>
 <schema/>
 <table/>
@@ -146,7 +148,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;src&#x2f;etl&#x2f;dummy.kjb</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;src&#x2f;etl&#x2f;dummy_main_job.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
