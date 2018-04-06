@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>dummy_post_job</name>
+  <name>starter_job</name>
   <description />
   <extended_description />
   <job_version />
@@ -324,7 +324,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
+      <xloc>352</xloc>
       <yloc>144</yloc>
     </entry>
   </entries>
