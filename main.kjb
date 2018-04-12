@@ -22,6 +22,11 @@
       <description>Properties file to configure the ETL process</description>
     </parameter>
     <parameter>
+      <name>p_force_clear_lock</name>
+      <default_value />
+      <description>Set to 1 if you want to forcefully clear the synchro lock</description>
+    </parameter>
+    <parameter>
       <name>p_logfile_name</name>
       <default_value />
       <description>Log filename automatically assigned by the runner</description>
@@ -320,7 +325,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>192</yloc>
+      <yloc>352</yloc>
     </entry>
     <entry>
       <name>Pre Phase</name>
@@ -353,7 +358,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>224</xloc>
-      <yloc>192</yloc>
+      <yloc>352</yloc>
     </entry>
     <entry>
       <name>Post Phase</name>
@@ -386,7 +391,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>672</xloc>
-      <yloc>192</yloc>
+      <yloc>352</yloc>
     </entry>
     <entry>
       <name>Error</name>
@@ -397,17 +402,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
-      <yloc>720</yloc>
-    </entry>
-    <entry>
-      <name>Success</name>
-      <description />
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>928</xloc>
-      <yloc>384</yloc>
+      <yloc>880</yloc>
     </entry>
     <entry>
       <name>Run main process</name>
@@ -440,7 +435,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
-      <yloc>192</yloc>
+      <yloc>352</yloc>
     </entry>
     <entry>
       <name>DUMMY</name>
@@ -460,7 +455,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
-      <yloc>288</yloc>
+      <yloc>448</yloc>
     </entry>
     <entry>
       <name>Check if email feedback is enabled 1</name>
@@ -482,7 +477,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
-      <yloc>576</yloc>
+      <yloc>736</yloc>
     </entry>
     <entry>
       <name>Send Feedback on Errors</name>
@@ -515,7 +510,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>416</xloc>
-      <yloc>640</yloc>
+      <yloc>800</yloc>
     </entry>
     <entry>
       <name>Send Feedback on Success</name>
@@ -547,8 +542,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
-      <yloc>480</yloc>
+      <xloc>1216</xloc>
+      <yloc>208</yloc>
     </entry>
     <entry>
       <name>Check if email feedback is enabled 2</name>
@@ -569,8 +564,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
-      <yloc>384</yloc>
+      <xloc>1216</xloc>
+      <yloc>352</yloc>
     </entry>
     <entry>
       <name>Set Terminated Successfully Flag</name>
@@ -589,8 +584,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
-      <yloc>96</yloc>
+      <xloc>832</xloc>
+      <yloc>352</yloc>
     </entry>
     <entry>
       <name>Set Terminated In Error</name>
@@ -610,7 +605,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
-      <yloc>384</yloc>
+      <yloc>544</yloc>
     </entry>
     <entry>
       <name>Evaluate synchro var</name>
@@ -632,21 +627,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>384</xloc>
-      <yloc>192</yloc>
-    </entry>
-    <entry>
-      <name>Log Info</name>
-      <description />
-      <type>WRITE_TO_LOG</type>
-      <logmessage>Previous instance for base process name ${p_base_process_name} is executing.
-Exit.</logmessage>
-      <loglevel />
-      <logsubject />
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>96</yloc>
+      <yloc>352</yloc>
     </entry>
     <entry>
       <name>Clear synchro lock if set 1</name>
@@ -679,7 +660,7 @@ Exit.</logmessage>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
-      <yloc>480</yloc>
+      <yloc>640</yloc>
     </entry>
     <entry>
       <name>Clear synchro lock if set 2</name>
@@ -711,7 +692,117 @@ Exit.</logmessage>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
+      <xloc>1008</xloc>
+      <yloc>352</yloc>
+    </entry>
+    <entry>
+      <name>Check if we force lock clear</name>
+      <description />
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname />
+      <variablename>${p_force_clear_lock}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask />
+      <comparevalue>1</comparevalue>
+      <minvalue />
+      <maxvalue />
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>Exit because synchro lock is set</name>
+      <description />
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>736</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>Log Info</name>
+      <description />
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Previous instance for base process name ${p_base_process_name} is executing.
+Exit.</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject />
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>560</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>Log Info 2</name>
+      <description />
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Another instance for base process name ${p_base_process_name} is executing.
+Exit but force lock clearing.</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject />
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>640</xloc>
+      <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>Force lock clear </name>
+      <description />
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename />
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>${p_base_process_name}</variable_name>
+          <variable_value>0</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>848</xloc>
+      <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>Terminated Successfully</name>
+      <description />
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1088</xloc>
+      <yloc>128</yloc>
+    </entry>
+    <entry>
+      <name>DUMMY 2</name>
+      <description />
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1088</xloc>
       <yloc>256</yloc>
     </entry>
   </entries>
@@ -790,25 +881,7 @@ Exit.</logmessage>
     </hop>
     <hop>
       <from>Check if email feedback is enabled 2</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Check if email feedback is enabled 2</from>
       <to>Send Feedback on Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Send Feedback on Success</from>
-      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -852,24 +925,6 @@ Exit.</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Evaluate synchro var</from>
-      <to>Log Info</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Log Info</from>
-      <to>Set Terminated Successfully Flag</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Set Terminated In Error</from>
       <to>Clear synchro lock if set 1</to>
       <from_nr>0</from_nr>
@@ -903,9 +958,141 @@ Exit.</logmessage>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Evaluate synchro var</from>
+      <to>Check if we force lock clear</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Check if we force lock clear</from>
+      <to>Log Info</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Log Info</from>
+      <to>Exit because synchro lock is set</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Check if we force lock clear</from>
+      <to>Log Info 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Log Info 2</from>
+      <to>Force lock clear </to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Force lock clear </from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Send Feedback on Success</from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Check if email feedback is enabled 2</from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 2</from>
+      <to>Terminated Successfully</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>This check will evaluate if the lock must be forcefully 
+cleared out.</note>
+      <xloc>112</xloc>
+      <yloc>192</yloc>
+      <width>333</width>
+      <heigth>42</heigth>
+      <fontname />
+      <fontsize>-1</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Base template for ETL jobs
+
+Parameters:
+=========================
+
+- p_base_process_name: Process name. Uniquely identify the process while running
+- p_configfile: Process configuration filename
+- p_log_filename: Log filename (set by pdi_runner.sh)
+- p_force_clear_lock: Set to 1 if you want to forcefully clear a lock set. Set only if needed.</note>
+      <xloc>656</xloc>
+      <yloc>464</yloc>
+      <width>546</width>
+      <heigth>154</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
 </job>

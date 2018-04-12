@@ -345,7 +345,7 @@
       <yloc>256</yloc>
     </entry>
     <entry>
-      <name>Evaluate synchro var</name>
+      <name>Evaluate synchro var on clear</name>
       <description />
       <type>SIMPLE_EVAL</type>
       <valuetype>field</valuetype>
@@ -367,7 +367,7 @@
       <yloc>256</yloc>
     </entry>
     <entry>
-      <name>Set lock variable</name>
+      <name>Clear lock variable</name>
       <description />
       <type>SET_VARIABLES</type>
       <replacevars>Y</replacevars>
@@ -496,7 +496,7 @@
     </hop>
     <hop>
       <from>Check Process is already running</from>
-      <to>Evaluate synchro var</to>
+      <to>Evaluate synchro var on clear</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -504,7 +504,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Evaluate synchro var</from>
+      <from>Evaluate synchro var on clear</from>
       <to>Log Info 3</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -514,7 +514,7 @@
     </hop>
     <hop>
       <from>Log Info 3</from>
-      <to>Set lock variable</to>
+      <to>Clear lock variable</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -522,13 +522,13 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Evaluate synchro var</from>
+      <from>Evaluate synchro var on clear</from>
       <to>Log Info</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Log Info</from>
@@ -540,7 +540,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Set lock variable</from>
+      <from>Clear lock variable</from>
       <to>Lock Cleared</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
