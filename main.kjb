@@ -320,7 +320,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>96</yloc>
+      <yloc>192</yloc>
     </entry>
     <entry>
       <name>Pre Phase</name>
@@ -353,7 +353,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>224</xloc>
-      <yloc>96</yloc>
+      <yloc>192</yloc>
     </entry>
     <entry>
       <name>Post Phase</name>
@@ -385,8 +385,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>96</yloc>
+      <xloc>672</xloc>
+      <yloc>192</yloc>
     </entry>
     <entry>
       <name>Error</name>
@@ -396,8 +396,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>560</yloc>
+      <xloc>512</xloc>
+      <yloc>720</yloc>
     </entry>
     <entry>
       <name>Success</name>
@@ -406,8 +406,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>256</yloc>
+      <xloc>928</xloc>
+      <yloc>384</yloc>
     </entry>
     <entry>
       <name>Run main process</name>
@@ -439,8 +439,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>96</yloc>
+      <xloc>512</xloc>
+      <yloc>192</yloc>
     </entry>
     <entry>
       <name>DUMMY</name>
@@ -459,8 +459,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>192</yloc>
+      <xloc>512</xloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Check if email feedback is enabled 1</name>
@@ -481,8 +481,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>384</yloc>
+      <xloc>512</xloc>
+      <yloc>576</yloc>
     </entry>
     <entry>
       <name>Send Feedback on Errors</name>
@@ -514,8 +514,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>464</yloc>
+      <xloc>416</xloc>
+      <yloc>640</yloc>
     </entry>
     <entry>
       <name>Send Feedback on Success</name>
@@ -547,8 +547,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>816</xloc>
-      <yloc>352</yloc>
+      <xloc>848</xloc>
+      <yloc>480</yloc>
     </entry>
     <entry>
       <name>Check if email feedback is enabled 2</name>
@@ -569,8 +569,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
-      <yloc>256</yloc>
+      <xloc>752</xloc>
+      <yloc>384</yloc>
     </entry>
     <entry>
       <name>Set Terminated Successfully Flag</name>
@@ -589,7 +589,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>752</xloc>
       <yloc>96</yloc>
     </entry>
     <entry>
@@ -609,8 +609,110 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>288</yloc>
+      <xloc>512</xloc>
+      <yloc>384</yloc>
+    </entry>
+    <entry>
+      <name>Evaluate synchro var</name>
+      <description />
+      <type>SIMPLE_EVAL</type>
+      <valuetype>field</valuetype>
+      <fieldname>sync_var_value</fieldname>
+      <variablename>p_base_process_name</variablename>
+      <fieldtype>string</fieldtype>
+      <mask />
+      <comparevalue>1</comparevalue>
+      <minvalue />
+      <maxvalue />
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>384</xloc>
+      <yloc>192</yloc>
+    </entry>
+    <entry>
+      <name>Log Info</name>
+      <description />
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Previous instance for base process name ${p_base_process_name} is executing.
+Exit.</logmessage>
+      <loglevel />
+      <logsubject />
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>96</yloc>
+    </entry>
+    <entry>
+      <name>Clear synchro lock if set 1</name>
+      <description />
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id />
+      <filename>${Internal.Job.Filename.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
+      <jobname />
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile />
+      <logext />
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name />
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>512</xloc>
+      <yloc>480</yloc>
+    </entry>
+    <entry>
+      <name>Clear synchro lock if set 2</name>
+      <description />
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id />
+      <filename>${Internal.Job.Filename.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
+      <jobname />
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile />
+      <logext />
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name />
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>752</xloc>
+      <yloc>256</yloc>
     </entry>
   </entries>
   <hops>
@@ -626,15 +728,6 @@
     <hop>
       <from>Run main process</from>
       <to>Post Phase</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Pre Phase</from>
-      <to>Run main process</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -723,26 +816,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Set Terminated Successfully Flag</from>
-      <to>Check if email feedback is enabled 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>DUMMY</from>
       <to>Set Terminated In Error</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Set Terminated In Error</from>
-      <to>Check if email feedback is enabled 1</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -757,6 +832,78 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Pre Phase</from>
+      <to>Evaluate synchro var</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Evaluate synchro var</from>
+      <to>Run main process</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Evaluate synchro var</from>
+      <to>Log Info</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Log Info</from>
+      <to>Set Terminated Successfully Flag</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set Terminated In Error</from>
+      <to>Clear synchro lock if set 1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Clear synchro lock if set 1</from>
+      <to>Check if email feedback is enabled 1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set Terminated Successfully Flag</from>
+      <to>Clear synchro lock if set 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Clear synchro lock if set 2</from>
+      <to>Check if email feedback is enabled 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

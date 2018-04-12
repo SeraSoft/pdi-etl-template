@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>Pre main job</name>
+  <name>clear_synchro_lock</name>
   <description />
   <extended_description />
   <job_version />
-  <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2011/11/28 16:06:38.743</created_date>
+  <created_date>2018/04/12 11:45:49.695</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2011/11/28 16:06:38.743</modified_date>
+  <modified_date>2018/04/12 11:45:49.695</modified_date>
   <parameters>
-    <parameter>
-      <name>p_configfile</name>
-      <default_value />
-      <description />
-    </parameter>
-  </parameters>
+    </parameters>
   <slaveservers>
     </slaveservers>
   <job-log-table>
@@ -293,163 +287,6 @@
   <shared_objects_file />
   <entries>
     <entry>
-      <name>START</name>
-      <description />
-      <type>SPECIAL</type>
-      <start>Y</start>
-      <dummy>N</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>48</xloc>
-      <yloc>192</yloc>
-    </entry>
-    <entry>
-      <name>Init sys dates and timestamps</name>
-      <description />
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id />
-      <filename>${Internal.Job.Filename.Directory}/init_sysdates_and_timestamps.ktr</filename>
-      <transname />
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name />
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>752</xloc>
-      <yloc>400</yloc>
-    </entry>
-    <entry>
-      <name>DUMMY 2</name>
-      <description />
-      <type>SPECIAL</type>
-      <start>N</start>
-      <dummy>Y</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>752</xloc>
-      <yloc>272</yloc>
-    </entry>
-    <entry>
-      <name>Interrompi job</name>
-      <description />
-      <type>ABORT</type>
-      <message />
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>976</xloc>
-      <yloc>272</yloc>
-    </entry>
-    <entry>
-      <name>Successo</name>
-      <description />
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>928</xloc>
-      <yloc>512</yloc>
-    </entry>
-    <entry>
-      <name>Init other dummy stuff</name>
-      <description />
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/dummy_other_init_stuff.kjb</filename>
-      <jobname />
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name />
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>928</xloc>
-      <yloc>400</yloc>
-    </entry>
-    <entry>
-      <name>Load Process Configuration</name>
-      <description />
-      <type>SET_VARIABLES</type>
-      <replacevars>Y</replacevars>
-      <filename>${Internal.Job.Filename.Directory}/../../../config/${p_configfile}</filename>
-      <file_variable_type>ROOT_JOB</file_variable_type>
-      <fields>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>592</xloc>
-      <yloc>400</yloc>
-    </entry>
-    <entry>
-      <name>Check Db connections</name>
-      <description />
-      <type>CHECK_DB_CONNECTIONS</type>
-      <connections>
-      </connections>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>176</xloc>
-      <yloc>112</yloc>
-    </entry>
-    <entry>
       <name>Check p_base_process_name exists</name>
       <description />
       <type>SIMPLE_EVAL</type>
@@ -468,21 +305,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>240</xloc>
-      <yloc>192</yloc>
-    </entry>
-    <entry>
-      <name>Log Info 2</name>
-      <description />
-      <type>WRITE_TO_LOG</type>
-      <logmessage>Base Process Name not set.</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject />
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>592</xloc>
-      <yloc>96</yloc>
+      <xloc>256</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>Check Process is already running</name>
@@ -490,7 +314,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/../commons/tools/check_lock_variable.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/check_lock_variable.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -517,8 +341,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>192</yloc>
+      <xloc>448</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>Evaluate synchro var</name>
@@ -539,8 +363,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>288</yloc>
+      <xloc>608</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>Set lock variable</name>
@@ -552,137 +376,98 @@
       <fields>
         <field>
           <variable_name>${p_base_process_name}</variable_name>
-          <variable_value>1</variable_value>
+          <variable_value>0</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
-      <yloc>400</yloc>
+      <xloc>864</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>Log Info</name>
       <description />
       <type>WRITE_TO_LOG</type>
-      <logmessage>No active instances for base process name ${p_base_process_name}.
-Going to create an in memory lock.</logmessage>
+      <logmessage>No in memory lock to clear for ${p_base_process_name}.</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
-      <yloc>288</yloc>
+      <xloc>656</xloc>
+      <yloc>176</yloc>
     </entry>
     <entry>
       <name>Log Info 3</name>
       <description />
       <type>WRITE_TO_LOG</type>
-      <logmessage>In memory lock created for base process name ${p_base_process_name}.</logmessage>
+      <logmessage>In memory lock cleared for ${p_base_process_name}.</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject />
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>752</xloc>
+      <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>No Lock To clear</name>
+      <description />
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>704</xloc>
+      <yloc>96</yloc>
+    </entry>
+    <entry>
+      <name>START</name>
+      <description />
+      <type>SPECIAL</type>
+      <start>Y</start>
+      <dummy>N</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>112</xloc>
+      <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>Log Info 2</name>
+      <description />
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Base Process Name not set, no synchro variable exists.</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>336</xloc>
-      <yloc>400</yloc>
+      <yloc>128</yloc>
     </entry>
     <entry>
-      <name>Successo 2</name>
+      <name>Lock Cleared</name>
       <description />
       <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
-      <yloc>288</yloc>
+      <xloc>1008</xloc>
+      <yloc>256</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>Init sys dates and timestamps</from>
-      <to>DUMMY 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>DUMMY 2</from>
-      <to>Interrompi job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Init sys dates and timestamps</from>
-      <to>Init other dummy stuff</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Init other dummy stuff</from>
-      <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Init other dummy stuff</from>
-      <to>DUMMY 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Load Process Configuration</from>
-      <to>Init sys dates and timestamps</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Load Process Configuration</from>
-      <to>DUMMY 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>Check Db connections</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Check Db connections</from>
-      <to>Check p_base_process_name exists</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>START</from>
       <to>Check p_base_process_name exists</to>
       <from_nr>0</from_nr>
@@ -690,6 +475,15 @@ Going to create an in memory lock.</logmessage>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Check p_base_process_name exists</from>
+      <to>Check Process is already running</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Check p_base_process_name exists</from>
@@ -710,8 +504,17 @@ Going to create an in memory lock.</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check p_base_process_name exists</from>
-      <to>Check Process is already running</to>
+      <from>Evaluate synchro var</from>
+      <to>Log Info 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Log Info 3</from>
+      <to>Set lock variable</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -724,12 +527,12 @@ Going to create an in memory lock.</logmessage>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Log Info</from>
-      <to>Set lock variable</to>
+      <to>No Lock To clear</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -738,34 +541,7 @@ Going to create an in memory lock.</logmessage>
     </hop>
     <hop>
       <from>Set lock variable</from>
-      <to>Log Info 3</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Log Info 3</from>
-      <to>Load Process Configuration</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Log Info 2</from>
-      <to>Load Process Configuration</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Evaluate synchro var</from>
-      <to>Successo 2</to>
+      <to>Lock Cleared</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
