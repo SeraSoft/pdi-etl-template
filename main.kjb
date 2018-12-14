@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
   <name>Main process job</name>
-  <description />
-  <extended_description />
-  <job_version />
+  <description/>
+  <extended_description/>
+  <job_version/>
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
@@ -13,7 +13,7 @@
   <parameters>
     <parameter>
       <name>p_base_process_name</name>
-      <default_value />
+      <default_value/>
       <description>Base process name to use wherever/whenever required in the process</description>
     </parameter>
     <parameter>
@@ -23,24 +23,24 @@
     </parameter>
     <parameter>
       <name>p_force_clear_lock</name>
-      <default_value />
+      <default_value/>
       <description>Set to 1 if you want to forcefully clear the synchro lock</description>
     </parameter>
     <parameter>
       <name>p_logfile_name</name>
-      <default_value />
+      <default_value/>
       <description>Log filename automatically assigned by the runner</description>
     </parameter>
   </parameters>
   <slaveservers>
     </slaveservers>
   <job-log-table>
-    <connection />
-    <schema />
-    <table />
-    <size_limit_lines />
-    <interval />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <size_limit_lines/>
+    <interval/>
+    <timeout_days/>
     <field>
       <id>ID_JOB</id>
       <enabled>Y</enabled>
@@ -148,10 +148,10 @@
     </field>
   </job-log-table>
   <jobentry-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -239,10 +239,10 @@
     </field>
   </jobentry-log-table>
   <channel-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -305,12 +305,13 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
-  <shared_objects_file />
+  <shared_objects_file/>
   <entries>
     <entry>
       <name>START</name>
-      <description />
+      <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -326,30 +327,34 @@
       <nr>0</nr>
       <xloc>64</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Pre Phase</name>
-      <description />
+      <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/src/etl/pre/main_pre_job.kjb</filename>
-      <jobname />
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/pre/main_pre_job.kjb</filename>
+      <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -359,30 +364,34 @@
       <nr>0</nr>
       <xloc>224</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Post Phase</name>
-      <description />
+      <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/src/etl/post/dummy_post_job.kjb</filename>
-      <jobname />
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/post/dummy_post_job.kjb</filename>
+      <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -392,41 +401,47 @@
       <nr>0</nr>
       <xloc>672</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Error</name>
-      <description />
+      <description/>
       <type>ABORT</type>
+      <attributes/>
       <message>Error</message>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>880</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Run main process</name>
-      <description />
+      <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/src/etl/main/starter_job.kjb</filename>
-      <jobname />
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/main/starter_job.kjb</filename>
+      <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -436,11 +451,13 @@
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>DUMMY</name>
-      <description />
+      <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>N</start>
       <dummy>Y</dummy>
       <repeat>N</repeat>
@@ -456,19 +473,21 @@
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>448</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Check if email feedback is enabled 1</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${email.fail.feedback.enabled}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -478,30 +497,34 @@
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>736</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Send Feedback on Errors</name>
-      <description />
+      <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/src/etl/commons/tools/send_feeback_mail.kjb</filename>
-      <jobname />
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/send_feeback_mail.kjb</filename>
+      <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -511,30 +534,34 @@
       <nr>0</nr>
       <xloc>416</xloc>
       <yloc>800</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Send Feedback on Success</name>
-      <description />
+      <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/src/etl/commons/tools/send_feeback_mail.kjb</filename>
-      <jobname />
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/send_feeback_mail.kjb</filename>
+      <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -544,19 +571,21 @@
       <nr>0</nr>
       <xloc>1216</xloc>
       <yloc>208</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Check if email feedback is enabled 2</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${email.success.feedback.enabled}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -566,13 +595,15 @@
       <nr>0</nr>
       <xloc>1216</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Set Terminated Successfully Flag</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
+      <attributes/>
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -586,13 +617,15 @@
       <nr>0</nr>
       <xloc>832</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Set Terminated In Error</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
+      <attributes/>
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -606,19 +639,21 @@
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>544</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Evaluate synchro var</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>field</valuetype>
       <fieldname>sync_var_value</fieldname>
       <variablename>p_base_process_name</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -628,30 +663,34 @@
       <nr>0</nr>
       <xloc>384</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Clear synchro lock if set 1</name>
-      <description />
+      <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
-      <jobname />
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
+      <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -661,30 +700,34 @@
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>640</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Clear synchro lock if set 2</name>
-      <description />
+      <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <job_object_id />
-      <filename>${Internal.Job.Filename.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
-      <jobname />
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
+      <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -694,19 +737,21 @@
       <nr>0</nr>
       <xloc>1008</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Check if we force lock clear</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${p_force_clear_lock}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -716,51 +761,59 @@
       <nr>0</nr>
       <xloc>464</xloc>
       <yloc>256</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Exit because synchro lock is set</name>
-      <description />
+      <description/>
       <type>SUCCESS</type>
+      <attributes/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>736</xloc>
       <yloc>144</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Log Info</name>
-      <description />
+      <description/>
       <type>WRITE_TO_LOG</type>
+      <attributes/>
       <logmessage>Previous instance for base process name ${p_base_process_name} is executing.
 Exit.</logmessage>
       <loglevel>Basic</loglevel>
-      <logsubject />
+      <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>560</xloc>
       <yloc>144</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Log Info 2</name>
-      <description />
+      <description/>
       <type>WRITE_TO_LOG</type>
+      <attributes/>
       <logmessage>Another instance for base process name ${p_base_process_name} is executing.
 Exit but force lock clearing.</logmessage>
       <loglevel>Basic</loglevel>
-      <logsubject />
+      <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>640</xloc>
       <yloc>256</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Force lock clear </name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
+      <attributes/>
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -774,21 +827,25 @@ Exit but force lock clearing.</logmessage>
       <nr>0</nr>
       <xloc>848</xloc>
       <yloc>256</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Terminated Successfully</name>
-      <description />
+      <description/>
       <type>SUCCESS</type>
+      <attributes/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1088</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>DUMMY 2</name>
-      <description />
+      <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>N</start>
       <dummy>Y</dummy>
       <repeat>N</repeat>
@@ -804,6 +861,7 @@ Exit but force lock clearing.</logmessage>
       <nr>0</nr>
       <xloc>1088</xloc>
       <yloc>256</yloc>
+      <attributes_kjc/>
     </entry>
   </entries>
   <hops>
@@ -1050,7 +1108,7 @@ cleared out.</note>
       <yloc>192</yloc>
       <width>333</width>
       <heigth>42</heigth>
-      <fontname />
+      <fontname/>
       <fontsize>-1</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
@@ -1095,4 +1153,20 @@ Parameters:
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
+  <attributes>
+    <group>
+      <name>METASTORE.pentaho</name>
+      <attribute>
+        <key>Default Run Configuration</key>
+        <value>{"namespace":"pentaho","id":"Default Run Configuration","name":"Default Run Configuration","description":"Defines a default run configuration","metaStoreName":null}</value>
+      </attribute>
+    </group>
+    <group>
+      <name>{"_":"Embedded MetaStore Elements","namespace":"pentaho","type":"Default Run Configuration"}</name>
+      <attribute>
+        <key>Pentaho local</key>
+        <value>{"children":[{"children":[],"id":"server","value":null},{"children":[],"id":"clustered","value":"N"},{"children":[],"id":"name","value":"Pentaho local"},{"children":[],"id":"description","value":null},{"children":[],"id":"pentaho","value":"N"},{"children":[],"id":"readOnly","value":"Y"},{"children":[],"id":"sendResources","value":"N"},{"children":[],"id":"logRemoteExecutionLocally","value":"N"},{"children":[],"id":"remote","value":"N"},{"children":[],"id":"local","value":"Y"},{"children":[],"id":"showTransformations","value":"N"}],"id":"Pentaho local","value":null,"name":"Pentaho local","owner":null,"ownerPermissionsList":[]}</value>
+      </attribute>
+    </group>
+  </attributes>
 </job>

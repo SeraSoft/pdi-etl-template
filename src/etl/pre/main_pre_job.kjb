@@ -296,6 +296,7 @@
       <name>START</name>
       <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -311,14 +312,16 @@
       <nr>0</nr>
       <xloc>112</xloc>
       <yloc>176</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Init sys dates and timestamps</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}/init_sysdates_and_timestamps.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/init_sysdates_and_timestamps.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -338,7 +341,7 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -347,11 +350,13 @@
       <nr>0</nr>
       <xloc>976</xloc>
       <yloc>480</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>DUMMY 2</name>
       <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>N</start>
       <dummy>Y</dummy>
       <repeat>N</repeat>
@@ -367,36 +372,43 @@
       <nr>0</nr>
       <xloc>896</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Interrompi job</name>
       <description/>
       <type>ABORT</type>
+      <attributes/>
       <message/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1200</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Successo</name>
       <description/>
       <type>SUCCESS</type>
+      <attributes/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1152</xloc>
       <yloc>592</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Init other dummy stuff</name>
       <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}/dummy_other_init_stuff.kjb</filename>
+      <filename>${Internal.Entry.Current.Directory}/dummy_other_init_stuff.kjb</filename>
       <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -412,7 +424,7 @@
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -422,11 +434,13 @@
       <nr>0</nr>
       <xloc>1152</xloc>
       <yloc>480</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Load Process Configuration</name>
       <description/>
       <type>SET_VARIABLES</type>
+      <attributes/>
       <replacevars>Y</replacevars>
       <filename>${Internal.Job.Filename.Directory}/../../../config/${p_configfile}</filename>
       <file_variable_type>ROOT_JOB</file_variable_type>
@@ -437,11 +451,13 @@
       <nr>0</nr>
       <xloc>528</xloc>
       <yloc>480</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Check p_base_process_name exists</name>
       <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
       <fieldname/>
       <variablename>${p_base_process_name}</variablename>
@@ -459,11 +475,13 @@
       <nr>0</nr>
       <xloc>384</xloc>
       <yloc>176</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Log Info 2</name>
       <description/>
       <type>WRITE_TO_LOG</type>
+      <attributes/>
       <logmessage>BASE PROCESS NAME NOT SET. EXIT!</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
@@ -472,11 +490,13 @@
       <nr>0</nr>
       <xloc>720</xloc>
       <yloc>176</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Check Process is already running</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/../commons/tools/check_lock_variable.ktr</filename>
@@ -508,11 +528,13 @@
       <nr>0</nr>
       <xloc>384</xloc>
       <yloc>272</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Evaluate synchro var</name>
       <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>field</valuetype>
       <fieldname>sync_var_value</fieldname>
       <variablename>p_base_process_name</variablename>
@@ -530,11 +552,13 @@
       <nr>0</nr>
       <xloc>384</xloc>
       <yloc>368</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Set lock variable</name>
       <description/>
       <type>SET_VARIABLES</type>
+      <attributes/>
       <replacevars>Y</replacevars>
       <filename/>
       <file_variable_type>JVM</file_variable_type>
@@ -550,11 +574,13 @@
       <nr>0</nr>
       <xloc>192</xloc>
       <yloc>480</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Log Info</name>
       <description/>
       <type>WRITE_TO_LOG</type>
+      <attributes/>
       <logmessage>No active instances for base process name ${p_base_process_name}.
 Going to create an in memory lock.</logmessage>
       <loglevel>Basic</loglevel>
@@ -564,11 +590,13 @@ Going to create an in memory lock.</logmessage>
       <nr>0</nr>
       <xloc>192</xloc>
       <yloc>368</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Log Info 3</name>
       <description/>
       <type>WRITE_TO_LOG</type>
+      <attributes/>
       <logmessage>In memory lock created for base process name ${p_base_process_name}.</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
@@ -577,25 +605,30 @@ Going to create an in memory lock.</logmessage>
       <nr>0</nr>
       <xloc>336</xloc>
       <yloc>480</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Exit synchro_var is set</name>
       <description/>
       <type>SUCCESS</type>
+      <attributes/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>192</xloc>
       <yloc>256</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Check DB Connections Availability</name>
       <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <job_object_id/>
       <filename>${Internal.Entry.Current.Directory}/../commons/tools/db_connections_check/start_dbchecks_job.kjb</filename>
       <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -621,11 +654,13 @@ Going to create an in memory lock.</logmessage>
       <nr>0</nr>
       <xloc>736</xloc>
       <yloc>480</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>DB Checks Enabled?</name>
       <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
       <fieldname/>
       <variablename>enable.db.availability.check</variablename>
@@ -643,19 +678,22 @@ Going to create an in memory lock.</logmessage>
       <nr>0</nr>
       <xloc>736</xloc>
       <yloc>656</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Log Info 4</name>
       <description/>
       <type>WRITE_TO_LOG</type>
+      <attributes/>
       <logmessage>DB AVAILABILITY CHECKS DISABLED</logmessage>
-      <loglevel/>
+      <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>864</xloc>
       <yloc>560</yloc>
+      <attributes_kjc/>
     </entry>
   </entries>
   <hops>
@@ -883,4 +921,20 @@ will be cleared </note>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
+  <attributes>
+    <group>
+      <name>METASTORE.pentaho</name>
+      <attribute>
+        <key>Default Run Configuration</key>
+        <value>{"namespace":"pentaho","id":"Default Run Configuration","name":"Default Run Configuration","description":"Defines a default run configuration","metaStoreName":null}</value>
+      </attribute>
+    </group>
+    <group>
+      <name>{"_":"Embedded MetaStore Elements","namespace":"pentaho","type":"Default Run Configuration"}</name>
+      <attribute>
+        <key>Pentaho local</key>
+        <value>{"children":[{"children":[],"id":"server","value":null},{"children":[],"id":"clustered","value":"N"},{"children":[],"id":"name","value":"Pentaho local"},{"children":[],"id":"description","value":null},{"children":[],"id":"pentaho","value":"N"},{"children":[],"id":"readOnly","value":"Y"},{"children":[],"id":"sendResources","value":"N"},{"children":[],"id":"logRemoteExecutionLocally","value":"N"},{"children":[],"id":"remote","value":"N"},{"children":[],"id":"local","value":"Y"},{"children":[],"id":"showTransformations","value":"N"}],"id":"Pentaho local","value":null,"name":"Pentaho local","owner":null,"ownerPermissionsList":[]}</value>
+      </attribute>
+    </group>
+  </attributes>
 </job>
