@@ -509,6 +509,11 @@
     </hop>
     <hop>
       <from>Calculate job run_date</from>
+      <to>Generate process_id</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Generate process_id</from>
       <to>Set Variables</to>
       <enabled>Y</enabled>
     </hop>
@@ -563,8 +568,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>270</xloc>
-      <yloc>54</yloc>
+      <xloc>226</xloc>
+      <yloc>55</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -643,6 +648,12 @@
         <variable_type>ROOT_JOB</variable_type>
         <default_value/>
       </field>
+      <field>
+        <field_name>process_id</field_name>
+        <variable_name>v_process_id</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+      </field>
     </fields>
     <use_formatting>Y</use_formatting>
     <attributes/>
@@ -654,8 +665,39 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>453</xloc>
-      <yloc>53</yloc>
+      <xloc>542</xloc>
+      <yloc>55</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Generate process_id</name>
+    <type>RandomValue</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>process_id</name>
+        <type>random uuid</type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>55</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

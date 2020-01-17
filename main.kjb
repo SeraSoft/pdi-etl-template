@@ -1048,6 +1048,7 @@ Base Instance Variables:
 - v_job_run_timestamp: Date when the job was started in format yyyyMMddHHmmss
 - v_hostname: PDI server's hostname
 - v_host_ip: PDI server's host ip address
+- v_process_id: UUID to identify currently running process (36 chars string) 
 
 Base Variables from Config:
 =================================================================
@@ -1058,7 +1059,7 @@ Base Variables from Config:
       <xloc>768</xloc>
       <yloc>352</yloc>
       <width>660</width>
-      <heigth>409</heigth>
+      <heigth>428</heigth>
       <fontname>.SF NS Text</fontname>
       <fontsize>10</fontsize>
       <fontbold>N</fontbold>
