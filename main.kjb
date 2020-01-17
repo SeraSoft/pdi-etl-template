@@ -22,11 +22,6 @@
       <description>Properties file to configure the ETL process</description>
     </parameter>
     <parameter>
-      <name>p_force_clear_lock</name>
-      <default_value/>
-      <description>Set to 1 if you want to forcefully clear the synchro lock</description>
-    </parameter>
-    <parameter>
       <name>p_logfile_name</name>
       <default_value/>
       <description>Log filename automatically assigned by the runner</description>
@@ -325,8 +320,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>64</xloc>
-      <yloc>352</yloc>
+      <xloc>48</xloc>
+      <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -362,8 +357,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
-      <yloc>352</yloc>
+      <xloc>304</xloc>
+      <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -399,8 +394,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>352</yloc>
+      <xloc>864</xloc>
+      <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -412,8 +407,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>880</yloc>
+      <xloc>592</xloc>
+      <yloc>752</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -449,8 +444,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>352</yloc>
+      <xloc>592</xloc>
+      <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -471,12 +466,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>448</yloc>
+      <xloc>592</xloc>
+      <yloc>320</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Check if email feedback is enabled 1</name>
+      <name>Check if email feedback is enabled - error</name>
       <description/>
       <type>SIMPLE_EVAL</type>
       <attributes/>
@@ -495,8 +490,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>736</yloc>
+      <xloc>592</xloc>
+      <yloc>608</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -532,8 +527,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>800</yloc>
+      <xloc>496</xloc>
+      <yloc>672</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -569,12 +564,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1216</xloc>
-      <yloc>208</yloc>
+      <xloc>960</xloc>
+      <yloc>16</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Check if email feedback is enabled 2</name>
+      <name>Check if email feedback is enabled - ok</name>
       <description/>
       <type>SIMPLE_EVAL</type>
       <attributes/>
@@ -593,30 +588,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1216</xloc>
-      <yloc>352</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Set Terminated Successfully Flag</name>
-      <description/>
-      <type>SET_VARIABLES</type>
-      <attributes/>
-      <replacevars>Y</replacevars>
-      <filename/>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-        <field>
-          <variable_name>terminated.successfully</variable_name>
-          <variable_value>1</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>832</xloc>
-      <yloc>352</yloc>
+      <xloc>864</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -637,8 +610,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>544</yloc>
+      <xloc>592</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -646,107 +619,9 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <attributes/>
-      <valuetype>field</valuetype>
-      <fieldname>sync_var_value</fieldname>
-      <variablename>p_base_process_name</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>1</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>384</xloc>
-      <yloc>352</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Clear synchro lock if set 1</name>
-      <description/>
-      <type>JOB</type>
-      <attributes/>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
-      <jobname/>
-      <directory/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <run_configuration>Pentaho local</run_configuration>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>640</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Clear synchro lock if set 2</name>
-      <description/>
-      <type>JOB</type>
-      <attributes/>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/clear_synchro_lock.kjb</filename>
-      <jobname/>
-      <directory/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <run_configuration>Pentaho local</run_configuration>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1008</xloc>
-      <yloc>352</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Check if we force lock clear</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <attributes/>
       <valuetype>variable</valuetype>
       <fieldname/>
-      <variablename>${p_force_clear_lock}</variablename>
+      <variablename>v_lock_present</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>1</comparevalue>
@@ -760,73 +635,81 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>464</xloc>
-      <yloc>256</yloc>
+      <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Exit because synchro lock is set</name>
+      <name>Clear synchro lock - error</name>
       <description/>
-      <type>SUCCESS</type>
+      <type>JOB</type>
       <attributes/>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/locks/clear_synchro_lock.kjb</filename>
+      <jobname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
-      <yloc>144</yloc>
+      <xloc>592</xloc>
+      <yloc>512</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Log Info</name>
+      <name>Clear synchro lock - ok</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
+      <type>JOB</type>
       <attributes/>
-      <logmessage>Previous instance for base process name ${p_base_process_name} is executing.
-Exit.</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/locks/clear_synchro_lock.kjb</filename>
+      <jobname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
-      <yloc>144</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Log Info 2</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <attributes/>
-      <logmessage>Another instance for base process name ${p_base_process_name} is executing.
-Exit but force lock clearing.</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>256</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Force lock clear </name>
-      <description/>
-      <type>SET_VARIABLES</type>
-      <attributes/>
-      <replacevars>Y</replacevars>
-      <filename/>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-        <field>
-          <variable_name>${p_base_process_name}</variable_name>
-          <variable_value>0</variable_value>
-          <variable_type>JVM</variable_type>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>848</xloc>
-      <yloc>256</yloc>
+      <xloc>704</xloc>
+      <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -837,8 +720,8 @@ Exit but force lock clearing.</logmessage>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
-      <yloc>128</yloc>
+      <xloc>1184</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -859,30 +742,88 @@ Exit but force lock clearing.</logmessage>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
-      <yloc>256</yloc>
+      <xloc>1056</xloc>
+      <yloc>96</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Init Global Vars</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>terminated.successfully</variable_name>
+          <variable_value>1</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Log Warning</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <logmessage>
+
+
+=================================================================================================================
+
+Previous instance for base process name ${p_base_process_name} started at ${v_last_job_run_timestamp} seems executing.
+However, maybe previous instance exited abnormally and lock file wasn't cleared.
+Please check locks temporary directory ${lock.tmp.dir} and eventually uncleand lock file.
+
+PROCESS EXITS!
+
+=================================================================================================================
+</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>528</xloc>
+      <yloc>128</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Set Terminated for Lock Set </name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>terminated.successfully</variable_name>
+          <variable_value>2</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>email.success.feedback.enabled</variable_name>
+          <variable_value>1</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>688</xloc>
+      <yloc>128</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
-    <hop>
-      <from>START</from>
-      <to>Pre Phase</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Run main process</from>
-      <to>Post Phase</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>Pre Phase</from>
       <to>DUMMY</to>
@@ -911,7 +852,7 @@ Exit but force lock clearing.</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check if email feedback is enabled 1</from>
+      <from>Check if email feedback is enabled - error</from>
       <to>Error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -920,7 +861,7 @@ Exit but force lock clearing.</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check if email feedback is enabled 1</from>
+      <from>Check if email feedback is enabled - error</from>
       <to>Send Feedback on Errors</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -938,7 +879,7 @@ Exit but force lock clearing.</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check if email feedback is enabled 2</from>
+      <from>Check if email feedback is enabled - ok</from>
       <to>Send Feedback on Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -954,15 +895,6 @@ Exit but force lock clearing.</logmessage>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Post Phase</from>
-      <to>Set Terminated Successfully Flag</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Pre Phase</from>
@@ -984,7 +916,7 @@ Exit but force lock clearing.</logmessage>
     </hop>
     <hop>
       <from>Set Terminated In Error</from>
-      <to>Clear synchro lock if set 1</to>
+      <to>Clear synchro lock - error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -992,85 +924,13 @@ Exit but force lock clearing.</logmessage>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Clear synchro lock if set 1</from>
-      <to>Check if email feedback is enabled 1</to>
+      <from>Clear synchro lock - error</from>
+      <to>Check if email feedback is enabled - error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Set Terminated Successfully Flag</from>
-      <to>Clear synchro lock if set 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Clear synchro lock if set 2</from>
-      <to>Check if email feedback is enabled 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Evaluate synchro var</from>
-      <to>Check if we force lock clear</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Check if we force lock clear</from>
-      <to>Log Info</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Log Info</from>
-      <to>Exit because synchro lock is set</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Check if we force lock clear</from>
-      <to>Log Info 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Log Info 2</from>
-      <to>Force lock clear </to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Force lock clear </from>
-      <to>DUMMY 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Send Feedback on Success</from>
@@ -1082,7 +942,7 @@ Exit but force lock clearing.</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check if email feedback is enabled 2</from>
+      <from>Check if email feedback is enabled - ok</from>
       <to>DUMMY 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1099,46 +959,108 @@ Exit but force lock clearing.</logmessage>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
+    <hop>
+      <from>START</from>
+      <to>Init Global Vars</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Init Global Vars</from>
+      <to>Pre Phase</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Run main process</from>
+      <to>Clear synchro lock - ok</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Clear synchro lock - ok</from>
+      <to>Post Phase</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Post Phase</from>
+      <to>Check if email feedback is enabled - ok</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Evaluate synchro var</from>
+      <to>Log Warning</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Log Warning</from>
+      <to>Set Terminated for Lock Set </to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set Terminated for Lock Set </from>
+      <to>Post Phase</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
     <notepad>
-      <note>This check will evaluate if the lock must be forcefully 
-cleared out.</note>
-      <xloc>112</xloc>
-      <yloc>192</yloc>
-      <width>333</width>
-      <heigth>42</heigth>
-      <fontname/>
-      <fontsize>-1</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
       <note>Base template for ETL jobs
 
-Parameters:
-=========================
-
-- p_base_process_name: Process name. Uniquely identify the process while running
-- p_configfile: Process configuration filename
+Base Process Parameters:
+=================================================================
+- p_base_process_name: Uniquely identify the process while running (Mandatory)
+- p_configfile: Process configuration filename (Mandatory)
 - p_log_filename: Log filename (set by pdi_runner.sh)
-- p_force_clear_lock: Set to 1 if you want to forcefully clear a lock set. Set only if needed.</note>
-      <xloc>656</xloc>
-      <yloc>464</yloc>
-      <width>546</width>
-      <heigth>154</heigth>
+
+Base Instance Variables:
+=================================================================
+- v_job_run_date: Date when the job was started in format yyyyMMdd
+- v_job_run_timestamp: Date when the job was started in format yyyyMMddHHmmss
+- v_hostname: PDI server's hostname
+- v_host_ip: PDI server's host ip address
+
+Base Variables from Config:
+=================================================================
+- base.dir: Root path to a convenient folder to store processes related things (Mandatory)
+- lock.dir: Path to a folder where the process will put locks' files (Mandatory)
+- pdi.user: Associates a user to a running PDI instance
+- pdi.program.name: Associates a name to a running PDI instance</note>
+      <xloc>768</xloc>
+      <yloc>352</yloc>
+      <width>660</width>
+      <heigth>409</heigth>
       <fontname>.SF NS Text</fontname>
-      <fontsize>13</fontsize>
+      <fontsize>10</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
