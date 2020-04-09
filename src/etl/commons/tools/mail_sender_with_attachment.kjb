@@ -291,6 +291,7 @@
       <name>Send customer feedback using GMAIL</name>
       <description/>
       <type>MAIL</type>
+      <attributes/>
       <server>${smtp.mail.host}</server>
       <port>${smtp.mail.port}</port>
       <destination>${mail.destination.addresses}</destination>
@@ -329,21 +330,25 @@
       <nr>0</nr>
       <xloc>864</xloc>
       <yloc>64</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Success</name>
       <description/>
       <type>SUCCESS</type>
+      <attributes/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>784</xloc>
       <yloc>432</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>START</name>
       <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -359,22 +364,26 @@
       <nr>0</nr>
       <xloc>160</xloc>
       <yloc>64</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Abort job</name>
       <description/>
       <type>ABORT</type>
+      <attributes/>
       <message/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>496</xloc>
       <yloc>432</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Use Google Mail?</name>
       <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
       <fieldname/>
       <variablename>${mail.isgmail}</variablename>
@@ -392,11 +401,13 @@
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>64</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Send customer feedback using other SMTP server</name>
       <description/>
       <type>MAIL</type>
+      <attributes/>
       <server>${smtp.mail.host}</server>
       <port>${smtp.mail.port}</port>
       <destination>${mail.destination.addresses}</destination>
@@ -433,13 +444,15 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
-      <yloc>144</yloc>
+      <xloc>672</xloc>
+      <yloc>160</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>DUMMY</name>
       <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>N</start>
       <dummy>Y</dummy>
       <repeat>N</repeat>
@@ -455,11 +468,13 @@
       <nr>0</nr>
       <xloc>496</xloc>
       <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Send customer feedback using SMTP No Auth</name>
       <description/>
       <type>MAIL</type>
+      <attributes/>
       <server>${smtp.mail.host}</server>
       <port>${smtp.mail.port}</port>
       <destination>${mail.destination.addresses}</destination>
@@ -497,12 +512,14 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>384</xloc>
-      <yloc>144</yloc>
+      <yloc>160</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Use Auth?</name>
       <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
       <fieldname/>
       <variablename>${mail.isauthenticated}</variablename>
@@ -520,11 +537,13 @@
       <nr>0</nr>
       <xloc>336</xloc>
       <yloc>64</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>DUMMY 2</name>
       <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>N</start>
       <dummy>Y</dummy>
       <repeat>N</repeat>
@@ -540,6 +559,7 @@
       <nr>0</nr>
       <xloc>784</xloc>
       <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
   </entries>
   <hops>
@@ -671,8 +691,8 @@ mail.destination.addresses -> Comma separated list of destination addresses
 email.attachment.name -> Name of the attachment to send with temial message (without extension)</note>
       <xloc>32</xloc>
       <yloc>528</yloc>
-      <width>599</width>
-      <heigth>106</heigth>
+      <width>955</width>
+      <heigth>160</heigth>
       <fontname>.Helvetica Neue DeskInterface</fontname>
       <fontsize>13</fontsize>
       <fontbold>N</fontbold>
@@ -689,4 +709,5 @@ email.attachment.name -> Name of the attachment to send with temial message (wit
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
+  <attributes/>
 </job>

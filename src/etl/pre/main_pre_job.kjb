@@ -332,7 +332,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
+      <xloc>752</xloc>
       <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
@@ -345,7 +345,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
+      <xloc>752</xloc>
       <yloc>496</yloc>
       <attributes_kjc/>
     </entry>
@@ -357,7 +357,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>976</xloc>
       <yloc>768</yloc>
       <attributes_kjc/>
     </entry>
@@ -394,7 +394,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>976</xloc>
       <yloc>576</yloc>
       <attributes_kjc/>
     </entry>
@@ -411,7 +411,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
+      <xloc>480</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -435,7 +435,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
+      <xloc>304</xloc>
       <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
@@ -450,7 +450,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
+      <xloc>480</xloc>
       <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
@@ -488,7 +488,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>976</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -512,7 +512,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>976</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -524,7 +524,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1248</xloc>
+      <xloc>1328</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -548,7 +548,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>560</xloc>
       <yloc>128</yloc>
       <attributes_kjc/>
     </entry>
@@ -565,7 +565,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>640</xloc>
       <yloc>48</yloc>
       <attributes_kjc/>
     </entry>
@@ -581,7 +581,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
+      <xloc>720</xloc>
       <yloc>128</yloc>
       <attributes_kjc/>
     </entry>
@@ -603,7 +603,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
+      <xloc>304</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -620,7 +620,7 @@ v_lock_present: ${v_lock_present}</logmessage>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1104</xloc>
+      <xloc>1184</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -658,7 +658,7 @@ v_lock_present: ${v_lock_present}</logmessage>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>976</xloc>
       <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
@@ -678,7 +678,7 @@ v_lock_present: ${v_lock_present}
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>976</xloc>
       <yloc>496</yloc>
       <attributes_kjc/>
     </entry>
@@ -715,7 +715,7 @@ v_lock_present: ${v_lock_present}
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>800</xloc>
+      <xloc>880</xloc>
       <yloc>128</yloc>
       <attributes_kjc/>
     </entry>
@@ -753,7 +753,7 @@ v_lock_present: ${v_lock_present}
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
+      <xloc>784</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -775,7 +775,7 @@ v_lock_present: ${v_lock_present}
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>640</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -794,9 +794,8 @@ v_job_run_date       -> ${v_job_run_date}
 v_job_run_timestamp  -> ${v_job_run_timestamp}
 v_hostname           -> ${v_hostname}
 v_host_ip            -> ${v_host_ip}
-v_versione_programma -> ${v_versione_programma}
 lock.dir             -> ${lock.dir}
-pdi.user		   -> ${pdi.user} 
+pdi.user             -> ${pdi.user} 
 pdi.program.name     -> ${pdi.program.name}
 =======================================================================================
 
@@ -806,8 +805,30 @@ Delete this last message and add here your own application instance variable's d
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>976</xloc>
       <yloc>672</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Init Global Vars</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>terminated.successfully</variable_name>
+          <variable_value>1</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>144</xloc>
+      <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -993,15 +1014,6 @@ Delete this last message and add here your own application instance variable's d
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>Check p_base_process_name exists</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Check p_base_process_name exists</from>
       <to>Set default for ${base.configuration.filename}</to>
       <from_nr>0</from_nr>
@@ -1045,6 +1057,24 @@ Delete this last message and add here your own application instance variable's d
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Init Global Vars</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Init Global Vars</from>
+      <to>Check p_base_process_name exists</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
