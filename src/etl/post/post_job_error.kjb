@@ -338,7 +338,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/src/etl/commons/tools/locks/clear_synchro_lock.kjb</filename>
+      <filename>${Internal.Entry.Current.Directory}/../commons/tools/locks/clear_synchro_lock.kjb</filename>
       <jobname/>
       <directory/>
       <arg_from_previous>N</arg_from_previous>
