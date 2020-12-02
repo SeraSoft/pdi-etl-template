@@ -597,7 +597,7 @@
       </field>
       <field>
         <name>body_success</name>
-        <variable>${success.email.text}</variable>
+        <variable>${success.email.default.text}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -609,7 +609,7 @@
       </field>
       <field>
         <name>body_error</name>
-        <variable>${error.email.text}</variable>
+        <variable>${error.email.default.text}</variable>
         <type>String</type>
         <format/>
         <currency/>
